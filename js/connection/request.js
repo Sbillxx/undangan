@@ -44,8 +44,18 @@ export const pool = (() => {
         restart: async (name) => {
             cachePool.set(name, null);
             cachePool.delete(name);
-            await window.caches.delete(name);
-            await window.caches.open(name).then((c) => cachePool.set(name, c));
+            if (window.caches) {
+                await window.caches.delete(name);
+                await window.caches.open(name).then((c) => cachePool.set(name, c));
+            } else {
+                const mockCache = {
+                    put: () => Promise.resolve(),
+                    match: () => Promise.resolve(null),
+                    delete: () => Promise.resolve(true),
+                    keys: () => Promise.resolve([]),
+                };
+                cachePool.set(name, mockCache);
+            }
         },
         /**
          * @param {function} callback
@@ -53,11 +63,22 @@ export const pool = (() => {
          * @returns {void}
          */
         init: (callback, lists = []) => {
-            if (!window.isSecureContext) {
-                throw new Error('this application required secure context');
+            cachePool = new Map();
+            if (!window.isSecureContext || !window.caches) {
+                console.warn('Cache API is unavailable or non-secure context. Running in fallback mode.');
+                lists.concat([cacheRequest]).forEach((v) => {
+                    const mockCache = {
+                        put: () => Promise.resolve(),
+                        match: () => Promise.resolve(null),
+                        delete: () => Promise.resolve(true),
+                        keys: () => Promise.resolve([]),
+                    };
+                    cachePool.set(v, mockCache);
+                });
+                callback();
+                return;
             }
 
-            cachePool = new Map();
             Promise.all(lists.concat([cacheRequest]).map((v) => window.caches.open(v).then((c) => cachePool.set(v, c)))).then(() => callback());
         },
     };

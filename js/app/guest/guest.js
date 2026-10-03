@@ -255,10 +255,10 @@ export const guest = (() => {
         const url = new URL('https://calendar.google.com/calendar/render');
         const data = new URLSearchParams({
             action: 'TEMPLATE',
-            text: 'The Wedding of Wahyu and Riski',
-            dates: `${formatDate('2023-03-15 10:00')}/${formatDate('2023-03-15 11:00')}`,
+            text: 'The Wedding of Rizki & Hilmi',
+            dates: `${formatDate('2026-10-29 09:00')}/${formatDate('2026-10-29 14:00')}`,
             details: 'Tanpa mengurangi rasa hormat, kami mengundang Anda untuk berkenan menghadiri acara pernikahan kami. Terima kasih atas perhatian dan doa restu Anda, yang menjadi kebahagiaan serta kehormatan besar bagi kami.',
-            location: 'RT 10 RW 02, Desa Pajerukan, Kec. Kalibagor, Kab. Banyumas, Jawa Tengah 53191.',
+            location: 'Kp. Cisolok RT 003 RW 004 Desa Cidugaleun, Kecamatan Cigalontang, Kabupaten Tasikmalaya',
             ctz: config.get('tz'),
         });
 
@@ -329,8 +329,6 @@ export const guest = (() => {
         const img = image.init();
         const aud = audio.init();
         const lib = loaderLibs();
-        const token = document.body.getAttribute('data-key');
-        const params = new URLSearchParams(window.location.search);
 
         window.addEventListener('resize', util.debounce(slide));
         document.addEventListener('undangan.progress.done', () => booting());
@@ -339,6 +337,12 @@ export const guest = (() => {
             img.download(e.currentTarget.getAttribute('data-src'));
         });
 
+        /* =========================================================================
+           KODE LAMA (ULEMS API / TOKEN) - DIKOMENTAR SESUAI PERMINTAAN PENGGUNA
+           "Jadi yang lama itu dikomentar aja"
+           =========================================================================
+        const token = document.body.getAttribute('data-key');
+        const params = new URLSearchParams(window.location.search);
         if (!token || token.length <= 0) {
             document.getElementById('comment')?.remove();
             document.querySelector('a.nav-link[href="#comment"]')?.closest('li.nav-item')?.remove();
@@ -378,6 +382,24 @@ export const guest = (() => {
 
             }).catch(() => progress.invalid('config'));
         }
+        ========================================================================= */
+
+        // KODE BARU (Menggunakan Google Spreadsheet / Google Apps Script):
+        progress.add();
+
+        if (img.hasDataSrc()) {
+            img.load();
+        } else {
+            img.load();
+        }
+
+        vid.load();
+        aud.load();
+        lib.load({ confetti: document.body.getAttribute('data-confetti') === 'true' });
+
+        comment.show()
+            .then(() => progress.complete('comment'))
+            .catch(() => progress.complete('comment'));
     };
 
     /**

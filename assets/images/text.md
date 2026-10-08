@@ -19,9 +19,9 @@ Kini, setelah melewati perjalanan dengan segala cerita, kami memantapkan hati un
 Semoga langkah kecil yang bermula dari sebuah komentar sederhana ini menjadi awal dari perjalanan panjang yang penuh cinta, kesetiaan, dan keberkahan.
 Karena pada akhirnya, bukan tentang bagaimana kami bertemu, tetapi tentang bagaimana kami memilih untuk tetap bersama hingga akhir.
 
-Dana
+Bank BRI
 Hilmi kusmiawati
-081958251532
+346601053915530
 
 Bank BRI
 Muhamad rizki abdul aziz

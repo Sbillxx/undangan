@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Undangan Pernikahan Rizki & Hilmi</title>
-    <meta name="description" content="Undangan Pernikahan Muhamad Rizki Abdul Aziz & Hilmi Kusmiawati – 29 Oktober 2026">
+    <title>Undangan Pernikahan Hilmi &amp; Rizki</title>
+    <meta name="description" content="Undangan Pernikahan Hilmi Kusmiawati &amp; Muhamad Rizki Abdul Aziz – 29 Oktober 2026">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -364,15 +364,31 @@
 
     .wish-title { font-family: var(--serif); font-size: 44px; color: var(--c-text); margin: 50px 0 28px; }
     textarea.f-rect { border-radius: var(--radius); resize: vertical; min-height: 110px; }
-    .wish-list { margin-top: 24px; }
+    .wish-list {
+        margin-top: 24px;
+        max-height: 420px;
+        overflow-y: auto;
+        padding-right: 4px;
+    }
+    .wish-list::-webkit-scrollbar { width: 4px; }
+    .wish-list::-webkit-scrollbar-thumb { background: rgba(106,80,62,.3); border-radius: 4px; }
     .wish-item {
-        background: rgba(255,255,255,.85); border-radius: 12px;
-        padding: 14px 16px; margin-bottom: 10px; text-align: left;
+        background: rgba(255,255,255,.9); border-radius: 12px;
+        padding: 14px 16px; margin-bottom: 12px; text-align: left;
         border-left: 4px solid var(--c-brown);
         box-shadow: 0 2px 8px rgba(0,0,0,.05);
     }
-    .wi-name { font-family: var(--sans); font-weight: 700; font-size: 13px; color: var(--c-text); margin-bottom: 4px; }
-    .wi-msg  { font-family: var(--sans); font-size: 13px; color: #555; line-height: 1.55; }
+    .wi-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 6px; margin-bottom: 6px; }
+    .wi-name { font-family: var(--sans); font-weight: 700; font-size: 13.5px; color: var(--c-text); }
+    .wi-badge {
+        font-family: var(--sans); font-size: 10px; font-weight: 700;
+        padding: 2px 8px; border-radius: 20px; text-transform: uppercase; letter-spacing: .4px;
+    }
+    .wi-badge-attend { background: #d4edda; color: #155724; }
+    .wi-badge-absent { background: #f8d7da; color: #721c24; }
+    .wi-badge-rsvp { background: #e0f2fe; color: #0284c7; border: 1px solid #bae6fd; }
+    .wi-time { font-family: var(--sans); font-size: 11px; color: #888; margin-left: auto; }
+    .wi-msg  { font-family: var(--sans); font-size: 13px; color: #444; line-height: 1.55; white-space: pre-wrap; word-break: break-word; }
 
     /* ─────────────────────────────────────────────────
        8. FOOTER
@@ -415,7 +431,7 @@
         <!-- Couple names & button -->
         <div class="cover-bottom" data-aos="fade-up" data-aos-duration="1400" data-aos-delay="250">
             <p class="cover-label">We Invite You to The Wedding of</p>
-            <h1 class="cover-names">Rizki &amp; Hilmi</h1>
+            <h1 class="cover-names">Hilmi &amp; Rizki</h1>
             <p class="cover-date">29 Oktober 2026</p>
             <button id="btnOpen" class="btn-open">
                 Open Invitation <i class="fas fa-envelope"></i>
@@ -444,7 +460,7 @@
          class="foliage" style="top:-6px;right:-18px;width:150px;" alt="">
 
     <div class="hero-text" data-aos="fade-up" data-aos-duration="1300">
-        <h2 class="hero-names">Rizki<br>&amp;<br>Hilmi</h2>
+        <h2 class="hero-names">Hilmi<br>&amp;<br>Rizki</h2>
         <p class="hero-sub">We're Getting Married</p>
     </div>
 </section>
@@ -464,27 +480,12 @@
          class="foliage" style="top:0;right:-18px;width:105px;opacity:.9;" alt="">
 
     <div class="sec-inner">
-        <p class="label" data-aos="fade-up">Groom &amp; Bride</p>
+        <p class="label" data-aos="fade-up">Bride &amp; Groom</p>
         <h2 class="title" data-aos="fade-up" data-aos-delay="80">Bride &amp; Groom</h2>
         <p class="couple-intro" data-aos="fade-up" data-aos-delay="140">
             Dengan penuh rasa syukur dan kebahagiaan, kami mengundang Bapak/Ibu/Saudara/i
             untuk hadir dan memberikan doa restu kepada putra-putri kami:
         </p>
-
-        <!-- ── GROOM ── -->
-        <div data-aos="fade-up" data-aos-duration="1100">
-            <div class="photo-ring">
-                <img class="person" src="./assets/images/b.jpeg" alt="Rizki">
-            </div>
-            <div style="padding-top:38px;">
-                <p class="name-big">Rizki</p>
-                <p class="name-full">Muhamad Rizki Abdul Aziz</p>
-                <p class="parents">Putra ke-2 dari<br>Bapak Oleh Solehudin &amp; Ibu Tini Martini</p>
-                <a href="https://instagram.com/" target="_blank" class="btn-ig"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-
-        <div class="amp-sep" data-aos="zoom-in">&amp;</div>
 
         <!-- ── BRIDE ── -->
         <div data-aos="fade-up" data-aos-duration="1100">
@@ -495,6 +496,21 @@
                 <p class="name-big">Hilmi</p>
                 <p class="name-full">Hilmi Kusmiawati</p>
                 <p class="parents">Putri ke-2 dari<br>Bapak Lukman &amp; Ibu Solihah</p>
+                <a href="https://instagram.com/" target="_blank" class="btn-ig"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <div class="amp-sep" data-aos="zoom-in">&amp;</div>
+
+        <!-- ── GROOM ── -->
+        <div data-aos="fade-up" data-aos-duration="1100">
+            <div class="photo-ring">
+                <img class="person" src="./assets/images/b.jpeg" alt="Rizki">
+            </div>
+            <div style="padding-top:38px;">
+                <p class="name-big">Rizki</p>
+                <p class="name-full">Muhamad Rizki Abdul Aziz</p>
+                <p class="parents">Putra ke-2 dari<br>Bapak Oleh Solehudin &amp; Ibu Tini Martini</p>
                 <a href="https://instagram.com/" target="_blank" class="btn-ig"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
@@ -516,7 +532,7 @@
         <h2 class="title" data-aos="fade-up" data-aos-delay="80">Countdown</h2>
 
         <!-- Couple photo (landscape prewedding) -->
-        <img class="cd-photo" src="./assets/images/g.jpeg" alt="Prewed Rizki & Hilmi"
+        <img class="cd-photo" src="./assets/images/g.jpeg" alt="Prewed Hilmi &amp; Rizki"
              data-aos="zoom-in" data-aos-duration="1100">
 
         <div class="cd-row" data-aos="fade-up">
@@ -527,7 +543,7 @@
         </div>
 
         <div data-aos="fade-up" data-aos-delay="120">
-            <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+Rizki+%26+Hilmi&dates=20261029T020000Z/20261029T080000Z&details=Akad+%26+Resepsi+Pernikahan&location=Kp.+Cisolok,+Tasikmalaya"
+            <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+Hilmi+%26+Rizki&dates=20261029T020000Z/20261029T080000Z&details=Akad+%26+Resepsi+Pernikahan&location=Kp.+Cisolok,+Tasikmalaya"
                target="_blank" class="btn-blk">
                 <i class="far fa-calendar-plus"></i> Save The Date
             </a>
@@ -679,7 +695,7 @@
     <div class="sec-inner">
         <!-- Couple round photo (same style as Viding's wishes section) -->
         <div class="wish-photo-ring" data-aos="zoom-in" data-aos-duration="1200">
-            <img class="wp" src="./assets/images/a.jpeg" alt="Rizki & Hilmi">
+            <img class="wp" src="./assets/images/a.jpeg" alt="Hilmi &amp; Rizki">
         </div>
 
         <p class="label" data-aos="fade-up" style="margin-top:52px;">Doa &amp; Ucapan</p>
@@ -713,22 +729,22 @@
         </p>
 
         <div style="max-width:400px;margin:32px auto 0;" data-aos="fade-up" data-aos-delay="180">
-            <!-- BRI -->
+            <!-- BRI - Hilmi -->
             <div style="background:rgba(255,255,255,.82);border-radius:var(--radius);padding:22px 20px;margin-bottom:14px;position:relative;box-shadow:var(--shadow);text-align:left;">
                 <p style="font-family:var(--sans);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:var(--c-brown);">Bank BRI</p>
-                <p id="acc1" style="font-family:monospace;font-size:20px;font-weight:700;color:#1a1a1a;margin:4px 0;">3466-01-053916-53-6</p>
-                <p style="font-family:var(--sans);font-size:12px;color:#888;">a.n Muhamad Rizki Abdul Aziz</p>
+                <p id="acc1" style="font-family:monospace;font-size:20px;font-weight:700;color:#1a1a1a;margin:4px 0;">3466-01-053915-53-0</p>
+                <p style="font-family:var(--sans);font-size:12px;color:#888;">a.n Hilmi Kusmiawati</p>
                 <button onclick="copyAcc('acc1','BRI')"
                     style="position:absolute;top:18px;right:16px;background:transparent;border:1.5px solid var(--c-brown);color:var(--c-brown);font-family:var(--sans);font-size:11px;font-weight:700;padding:5px 14px;border-radius:30px;cursor:pointer;transition:all .2s;"
                     onmouseover="this.style.background='var(--c-brown)';this.style.color='#fff'"
                     onmouseout="this.style.background='transparent';this.style.color='var(--c-brown)'">Salin</button>
             </div>
-            <!-- DANA -->
+            <!-- BRI - Rizki -->
             <div style="background:rgba(255,255,255,.82);border-radius:var(--radius);padding:22px 20px;margin-bottom:14px;position:relative;box-shadow:var(--shadow);text-align:left;">
-                <p style="font-family:var(--sans);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:var(--c-brown);">DANA</p>
-                <p id="acc2" style="font-family:monospace;font-size:20px;font-weight:700;color:#1a1a1a;margin:4px 0;">081958251532</p>
-                <p style="font-family:var(--sans);font-size:12px;color:#888;">a.n Hilmi Kusmiawati</p>
-                <button onclick="copyAcc('acc2','DANA')"
+                <p style="font-family:var(--sans);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:var(--c-brown);">Bank BRI</p>
+                <p id="acc2" style="font-family:monospace;font-size:20px;font-weight:700;color:#1a1a1a;margin:4px 0;">3466-01-053916-53-6</p>
+                <p style="font-family:var(--sans);font-size:12px;color:#888;">a.n Muhamad Rizki Abdul Aziz</p>
+                <button onclick="copyAcc('acc2','BRI')"
                     style="position:absolute;top:18px;right:16px;background:transparent;border:1.5px solid var(--c-brown);color:var(--c-brown);font-family:var(--sans);font-size:11px;font-weight:700;padding:5px 14px;border-radius:30px;cursor:pointer;transition:all .2s;"
                     onmouseover="this.style.background='var(--c-brown)';this.style.color='#fff'"
                     onmouseout="this.style.background='transparent';this.style.color='var(--c-brown)'">Salin</button>
@@ -741,7 +757,7 @@
      FOOTER
      ───────────────────────────────────────────────────── -->
 <footer class="footer">
-    &copy; 2026 Undangan Pernikahan Rizki &amp; Hilmi<br>
+    &copy; 2026 Undangan Pernikahan Hilmi &amp; Rizki<br>
     Made with <span style="color:#e04c4c;">❤</span> &amp; doa terbaik
 </footer>
 
@@ -802,47 +818,242 @@ function tick() {
 }
 tick(); setInterval(tick, 1000);
 
-/* ── RSVP ── */
-document.getElementById('rsvpForm').onsubmit = function(e) {
+/* ── GOOGLE SPREADSHEET DATABASE ENDPOINT ── */
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbztt0C6KacaBd9A2vzuI_KCAjb1LuS73ADOQiN41PYGxKjSofcC8C_WnOg-erl5c-b9ag/exec';
+
+function escapeHtml(str) {
+    if (!str) return '';
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+}
+
+/* ── Masking Nomor HP (contoh: 0812xxxx) ── */
+function maskPhone(str) {
+    if (!str) return '';
+    return str.replace(/(?:HP:\s*)?(?:\+?62\s*|0)?(8\d{2})[\d\s-]{4,}/gi, function(match, prefix) {
+        var hasHP = /HP:/i.test(match);
+        return (hasHP ? 'HP: ' : '') + '0' + prefix + 'xxxx';
+    });
+}
+
+/* ── RSVP (Simpan ke Google Spreadsheet) ── */
+document.getElementById('rsvpForm').onsubmit = async function(e) {
     e.preventDefault();
-    const name = this.querySelector('[name="name"]').value;
-    iziToast.success({ title: 'RSVP Terkirim!', message: 'Terima kasih, ' + name + ' 🙏', position: 'bottomCenter', timeout: 3000 });
+    const btn = this.querySelector('button[type="submit"]');
+    const name = this.querySelector('[name="name"]').value.trim();
+    const phone = (this.querySelector('[name="phone"]')?.value || '').trim();
+    const guests = this.querySelector('[name="guests"]')?.value || '1';
+    const attendVal = this.querySelector('[name="attend"]')?.value;
+    const isAttend = attendVal === 'hadir';
+    const presenceText = isAttend ? 'Datang' : 'Berhalangan';
+
+    const origBtnText = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
+
+    // Format nomor HP agar disamarkan (0812xxxx)
+    const cleanPhone = phone.replace(/\D/g, '');
+    const prefix = cleanPhone.startsWith('62') ? ('0' + cleanPhone.slice(2, 5)) : (cleanPhone.startsWith('0') ? cleanPhone.slice(0, 4) : ('0' + cleanPhone.slice(0, 3)));
+    const maskedPhone = cleanPhone.length >= 4 ? (prefix + 'xxxx') : '';
+
+    const payload = {
+        type: 'rsvp',
+        action: 'rsvp',
+        name: name,
+        phone: maskedPhone || '-',
+        guests: guests,
+        attend: presenceText,
+        presence: presenceText,
+        comment: 'Konfirmasi Kehadiran (' + guests + ' Tamu' + (maskedPhone ? ', HP: ' + maskedPhone : '') + ')'
+    };
+
+    try {
+        await fetch(SCRIPT_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: JSON.stringify(payload)
+        });
+        iziToast.success({
+            title: 'RSVP Terkirim!',
+            message: 'Terima kasih, konfirmasi Anda telah tersimpan di sistem 🙏',
+            position: 'bottomCenter',
+            timeout: 3500
+        });
+        setTimeout(fetchWishes, 2000);
+    } catch (err) {
+        console.error('Error submitting RSVP to Google Sheets:', err);
+        iziToast.success({
+            title: 'RSVP Diterima!',
+            message: 'Terima kasih atas konfirmasinya, ' + name + ' 🙏',
+            position: 'bottomCenter',
+            timeout: 3500
+        });
+    }
+
     this.innerHTML = `<div style="padding:36px 0;text-align:center;">
         <i class="fas fa-check-circle" style="font-size:52px;color:var(--c-brown);margin-bottom:14px;display:block;"></i>
         <h4 style="font-family:var(--serif,serif);font-size:30px;color:var(--c-text,#333);margin-bottom:8px;">Terima Kasih!</h4>
-        <p style="font-family:var(--sans,sans-serif);font-size:13px;color:#666;">Konfirmasi kehadiran Anda telah kami terima.</p>
+        <p style="font-family:var(--sans,sans-serif);font-size:14px;color:#555;line-height:1.6;">
+            Konfirmasi kehadiran <strong>${escapeHtml(name)}</strong> (${presenceText}) telah berhasil kami simpan.
+        </p>
     </div>`;
 };
 
-/* ── Wedding Wishes ── */
+/* ── Wedding Wishes (Tersinkron dengan Google Spreadsheet) ── */
 const SKEY = 'rh2026_wishes';
 const DEF_WISHES = [
-    { n: 'Sarah & David', m: 'Wishing you both a lifetime of love and joy! 🎉' },
-    { n: 'Rian Firmansyah', m: 'Selamat menempuh hidup baru! Semoga sakinah, mawaddah, warahmah. 🤍' },
-    { n: 'Nadia Saraswati', m: 'Barakallahu lakuma wa baraka alaykuma wa jamaa baynakuma fi khayr. 🌸' }
+    { name: 'Sarah & David', comment: 'Wishing you both a lifetime of love and joy! 🎉', presence: 'Datang' },
+    { name: 'Rian Firmansyah', comment: 'Selamat menempuh hidup baru! Semoga sakinah, mawaddah, warahmah. 🤍', presence: 'Datang' },
+    { name: 'Nadia Saraswati', comment: 'Barakallahu lakuma wa baraka alaykuma wa jamaa baynakuma fi khayr. 🌸', presence: 'Datang' }
 ];
-function loadW() { try { return JSON.parse(localStorage.getItem(SKEY)) || DEF_WISHES; } catch { return DEF_WISHES; } }
+
+let currentWishes = [];
 function renderW(list) {
-    document.getElementById('wishList').innerHTML = list.map(w =>
-        `<div class="wish-item"><div class="wi-name">💌 ${w.n}</div><div class="wi-msg">${w.m}</div></div>`
-    ).join('');
+    const listEl = document.getElementById('wishList');
+    if (!list || list.length === 0) {
+        listEl.innerHTML = '<div style="padding:22px 16px;font-size:13px;color:#666;background:rgba(255,255,255,.85);border-radius:12px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.04);">💌 Belum ada ucapan & doa. Jadilah yang pertama memberikan ucapan! ✨</div>';
+        return;
+    }
+    listEl.innerHTML = list.map(w => {
+        let rawName = (w.name || w.n || 'Tamu').trim();
+        const rawMsg = w.comment || w.m || '';
+
+        // Deteksi apakah entri ini adalah RSVP
+        const isRSVP = /^rsvp(\s*test)?$/i.test(rawName) || w.type === 'rsvp' || /konfirmasi kehadiran/i.test(rawMsg) || /\[rsvp\]/i.test(rawMsg);
+
+        // Jika namanya "RSVP Test", ubah menjadi "RSVP"
+        if (/^rsvp\s*test$/i.test(rawName)) {
+            rawName = 'RSVP';
+        }
+
+        const name = escapeHtml(rawName);
+        // Samarkan nomor HP dalam pesan menjadi 0812xxxx
+        const msg = escapeHtml(maskPhone(rawMsg));
+        const time = escapeHtml(w.timestamp || '');
+        const presence = w.presence;
+
+        let rsvpBadgeHtml = '';
+        if (isRSVP) {
+            rsvpBadgeHtml = '<span class="wi-badge wi-badge-rsvp"><i class="fas fa-clipboard-check" style="font-size:9px;margin-right:3px;"></i>RSVP</span>';
+        }
+
+        let badgeHtml = '';
+        if (presence === 'Datang') {
+            badgeHtml = '<span class="wi-badge wi-badge-attend"><i class="fas fa-check-circle" style="font-size:9px;margin-right:3px;"></i>Hadir</span>';
+        } else if (presence === 'Berhalangan') {
+            badgeHtml = '<span class="wi-badge wi-badge-absent"><i class="fas fa-times-circle" style="font-size:9px;margin-right:3px;"></i>Berhalangan</span>';
+        }
+
+        const icon = isRSVP ? '📋' : '💌';
+
+        return `<div class="wish-item">
+            <div class="wi-header">
+                <span class="wi-name">${icon} ${name}</span>
+                ${rsvpBadgeHtml}
+                ${badgeHtml}
+                ${time ? `<span class="wi-time">${time}</span>` : ''}
+            </div>
+            <div class="wi-msg">${msg}</div>
+        </div>`;
+    }).join('');
 }
-renderW(loadW());
-document.getElementById('wishForm').onsubmit = function(e) {
+
+// 1. Tampilkan dari cache localStorage jika ada
+try {
+    const cached = localStorage.getItem(SKEY);
+    if (cached !== null) {
+        currentWishes = JSON.parse(cached);
+        renderW(currentWishes);
+    } else {
+        document.getElementById('wishList').innerHTML = '<div style="padding:20px;font-size:13px;color:#777;text-align:center;"><i class="fas fa-spinner fa-spin"></i> Memuat ucapan...</div>';
+    }
+} catch {
+    currentWishes = [];
+}
+
+// 2. Ambil data live dari Google Spreadsheet (langsung sinkron, termasuk saat spreadsheet dikosongkan)
+async function fetchWishes() {
+    try {
+        const res = await fetch(SCRIPT_URL + '?t=' + Date.now());
+        const json = await res.json();
+        if (json && json.status === 'success' && Array.isArray(json.data)) {
+            currentWishes = json.data;
+            localStorage.setItem(SKEY, JSON.stringify(json.data));
+            renderW(json.data);
+        }
+    } catch (err) {
+        console.warn('Gagal memuat ucapan dari Google Spreadsheet, menggunakan data lokal:', err);
+    }
+}
+fetchWishes();
+
+// 3. Kirim ucapan baru ke Google Spreadsheet
+document.getElementById('wishForm').onsubmit = async function(e) {
     e.preventDefault();
-    const n = this.querySelector('[name="wisher_name"]').value.trim();
-    const m = this.querySelector('[name="wisher_message"]').value.trim();
-    if (!n || !m) return;
-    const list = loadW(); list.unshift({ n, m });
-    localStorage.setItem(SKEY, JSON.stringify(list));
-    renderW(list);
-    this.querySelector('[name="wisher_message"]').value = '';
-    iziToast.success({ title: 'Ucapan Terkirim!', message: 'Terima kasih atas doanya 🙏', position: 'bottomCenter', timeout: 2500 });
+    const btn = this.querySelector('button[type="submit"]');
+    const nameInput = this.querySelector('[name="wisher_name"]');
+    const msgInput = this.querySelector('[name="wisher_message"]');
+    const name = nameInput.value.trim();
+    const msg = msgInput.value.trim();
+    if (!name || !msg) return;
+
+    btn.disabled = true;
+    const origBtnText = btn.innerHTML;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
+
+    // Tambahkan langsung ke UI secara optimis
+    const newWish = {
+        name: name,
+        comment: msg,
+        presence: 'Datang',
+        timestamp: 'Baru saja'
+    };
+    currentWishes.unshift(newWish);
+    localStorage.setItem(SKEY, JSON.stringify(currentWishes));
+    renderW(currentWishes);
+    msgInput.value = '';
+
+    try {
+        await fetch(SCRIPT_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: JSON.stringify({
+                type: 'wish',
+                action: 'wish',
+                name: name,
+                presence: 'Datang',
+                comment: msg,
+                message: msg
+            })
+        });
+        iziToast.success({
+            title: 'Ucapan Terkirim!',
+            message: 'Doa restu Anda telah tersimpan di spreadsheet 🙏',
+            position: 'bottomCenter',
+            timeout: 2500
+        });
+        setTimeout(fetchWishes, 2000);
+    } catch (err) {
+        console.error('Error posting wish to Google Sheets:', err);
+        iziToast.success({
+            title: 'Ucapan Tersimpan!',
+            message: 'Terima kasih atas doa restunya 🙏',
+            position: 'bottomCenter',
+            timeout: 2500
+        });
+    } finally {
+        btn.disabled = false;
+        btn.innerHTML = origBtnText;
+    }
 };
 
 /* ── Copy Account ── */
 function copyAcc(id, bank) {
-    const num = document.getElementById(id).textContent.replace(/\s/g,'');
+    const num = document.getElementById(id).textContent.replace(/[\s-]/g,'');
     navigator.clipboard.writeText(num).then(() => {
         iziToast.success({ title: 'Berhasil Disalin!', message: bank + ': ' + num, position: 'bottomCenter', timeout: 2500 });
     }).catch(() => iziToast.error({ title: 'Gagal', message: 'Salin manual: ' + num, position: 'bottomCenter', timeout: 3000 }));

@@ -99,11 +99,12 @@
     .cover-ui {
         position: absolute; inset: 0; z-index: 5;
         display: flex; flex-direction: column;
-        align-items: center; justify-content: space-between;
-        padding: 52px 24px 64px; text-align: center;
+        align-items: center; justify-content: center;
+        padding: 40px 24px; text-align: center;
     }
     /* guest tag */
     .guest-tag {
+        position: absolute; top: 44px;
         background: rgba(255,255,255,.88);
         backdrop-filter: blur(10px);
         border: 1px solid rgba(255,255,255,.65);
@@ -120,8 +121,11 @@
         font-size: 17px; font-weight: 700;
         color: var(--c-text); margin-top: 3px;
     }
-    /* bottom content */
-    .cover-bottom { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+    /* bottom content / center content */
+    .cover-bottom {
+        display: flex; flex-direction: column; align-items: center; gap: 14px;
+        margin-top: 36px;
+    }
     .cover-label  { font-family: var(--sans); font-size: 13px; color: var(--c-text); }
     .cover-names  { font-family: var(--serif); font-size: 56px; line-height: 1; color: var(--c-text); }
     .cover-date   { font-family: var(--sans); font-size: 14px; letter-spacing: .5px; color: var(--c-text); }

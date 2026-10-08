@@ -70,7 +70,7 @@ $(document).ready(function () {
     // -------------------------------------------------------------
     // 4. Real-time Countdown Timer
     // -------------------------------------------------------------
-    const weddingDate = new Date("2025-10-22T10:00:00+07:00").getTime();
+    const weddingDate = new Date("2026-10-29T09:00:00+07:00").getTime();
 
     function updateCountdown() {
         const now = new Date().getTime();
